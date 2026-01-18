@@ -110,6 +110,16 @@ PRESIDENTセッションで直接入力：
 ./agent-send.sh --list
 ```
 
+### launch-agents.shで一括起動
+
+```bash
+# 全エージェントを起動
+./launch-agents.sh
+
+# 起動コマンドを指定したい場合
+CLAUDE_CMD="claude" CLAUDE_ARGS="--dangerously-skip-permissions" ./launch-agents.sh
+```
+
 ## 🧪 確認・デバッグ
 
 ### ログ確認
@@ -123,6 +133,12 @@ grep "boss1" logs/send_log.txt
 
 # 完了ファイル確認
 ls -la ./tmp/worker*_done.txt
+```
+
+### 進捗ステータス確認
+
+```bash
+./project-status.sh
 ```
 
 ### セッション状態確認
